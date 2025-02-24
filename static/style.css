@@ -1,0 +1,82 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1a1a24;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    margin-top: 60px; /* Ensure content does not go under the header */
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #2e2e38;
+    color: white;
+    height: 100vh; /* Full height */
+    position: fixed;
+    top: 60px; /* Sticks below header */
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex-grow: 1;
+    margin-left: 260px;
+    margin-top: 20px;
+    padding: 40px;
+    background: white;
+    overflow-y: auto;
+    height: 100%;
+    margin-right: 260px
+}
+
+p {
+    line-height: 1.3;
+}
+
+ul,ol {
+    padding-left: 30px;
+}
+
+section {
+    scroll-margin-top: 80px;
+}

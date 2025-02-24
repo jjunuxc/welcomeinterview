@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Interview</title>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">-->
+    <link rel="stylesheet" href="..\static\style.css">
+</head>
+<body>
+    <header>
+        <h1>The Interview</h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/#task">The Task</a></li>
+                <li><a href="/#tools">Your Tools</a></li>
+                <li><a href="/#target">Machines To Target</a></li>
+                <li><a href="/#dosdonts">Do’s and Don’ts</a></li>
+                <li><a href="/#reset">Resetting Machines</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div class="scrollable">
+                <h2>Welcome</h2>
+                <p>Welcome to The Interview. This page contains information regarding this technical assessment.</p>
+                <br>
+                <hr>
+                <br>
+                <section id="task">
+                    <h2>The task</h2>
+                    <p>
+                        There are 4 different machines to target. You are to find as many vulnerabilities as you can 
+                        in these 4 machines. <br>
+                        Document these vulnerabilities in the reporting template given to you and email the report.
+                    </p> 
+                    <br>
+                    <hr>
+                    <br>
+                </section>
+                <section id="tools">
+                    <h2>Your Tools</h2>
+                    <p>
+                        You have 2 Machines for use: <br><br>
+                        <h3>Windows Machine</h3>
+                        <p>
+                            For source code review. Open Visual Studio Code to review the source code of insecure acadamy.
+                            <br>
+                            Add the folder into the workspace if it is empty. The source code folder is found on the Desktop.
+                        </p>
+                        <br>
+                        <h3>Kali Machine</h3>
+                        <p>
+                            For your general use to find vulnerabilities. Commonly used tools are already installed. You may install
+                            any other tools needed to assist in your vulnerability finding.
+                            <br>
+                            The password for the Kali Machine is <u>offS3ck@livm</u> if you require any sudo operations.
+                        </p>
+                    </p>
+                <br>
+                <hr>
+                <br>
+                </section>
+                <section id="target">
+                    <h2>Machines To Target</h2> 
+                    <p>
+                        You are only to target the following machines: 
+                        <br>
+                        <br>
+                        <ol>
+                            <li>Machine 1: 10.129.23.6</li>
+                            <li>Machine 2: 10.25.1.5 or 10.25.1.7 (only use when asked to)</li>
+                            <li>Machine 3: 10.129.23.5</li>
+                            <li>Machine 4: 10.129.23.7</li>
+                        </ol>
+                    </p>
+                    <br>
+                    <hr>
+                    <br>
+                </section>
+                <section id="dosdonts">
+                    <h2>Do's and Don'ts</h2>
+                    <br>
+                    <p>
+                        <h3>Do</h3>
+                        <ul>
+                            <li>Install other tools (if needed) onto the Kali Machine</li>
+                            <li>Using the browser to conduct research</li>
+                        </ul>
+                        <br>
+                        <h3>Don't</h3>
+                        <ul>
+                            <li>Scan for machines not in the listed target</li>
+                            <li>Attempt to break machines not in the listed target</li>
+                            <li>Install other software on the Windows Machine</li>
+                        </ul>
+                    </p>
+                    <br>
+                    <hr>
+                    <br>
+                </section>
+                <section id="reset">
+                    <h2>Resetting Machines</h2>
+                    <p>
+                        You may reset the target machines should you encounter any problems with the machines, or if you have 
+                        flooded the database with too much data and would like to reset it. Please click <a href="reset">here</a> to reset the machines.
+                        Do note it will take at least 5 minutes for the machine to be reset. 
+                    </p>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
