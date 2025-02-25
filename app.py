@@ -14,19 +14,23 @@ def check_password(stored_hash, entered_pass):
     if hashed.hexdigest() == stored_hash:
         return True
 
+# Home page
 @app.route("/")
 def index():
     return render_template("index.html")
 
+# VM Reset page
 @app.route("/reset")
 def reset():
     return render_template("reset.html")
 
+# Login page
 @app.route("/login")
 def login_page():
     return render_template("login.html")
 
-@app.route("/loginreset", methods=['POST'])
+# Login authentication
+@app.route("/adminreset", methods=['POST'])
 def login():
     user = request.form['username']
     pwd = request.form['password']
@@ -38,3 +42,18 @@ def login():
             return render_template('login.html', info='Invalid Pass')
         else:
             return render_template('admin.html', name=user)
+
+# Page not found error
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
+
+# Internal error
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template("500.html"), 500
+
+# Method not allowed error
+@app.errorhandler(405)
+def not_allowed(e):
+    return render_template("405.html"), 405
