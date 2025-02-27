@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Interview</title>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">-->
+    <link rel="stylesheet" href="..\static\style.css">
+</head>
+<body>
+    <header>
+        <h1>The Interview</h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/#task">The Task</a></li>
+                <li><a href="/#tools">Your Tools</a></li>
+                <li><a href="/#target">Machines To Target</a></li>
+                <li><a href="/#dosdonts">Do’s and Don’ts</a></li>
+                <li><a href="/#reset">Resetting Machines</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <h2>Virtual Machines</h2>
+            <br>
+            <br>
+            <div class="vm" data-vm="kali1">
+                <label>Kali Machine (for Associate):</label>
+                <br>
+                <select class="action">
+                    <option value="start">Start</option>
+                    <option value="stop">Stop</option>
+                    <option value="reset">Reset</option>
+                </select>
+                <button class="run-btn">Run</button>
+                <p class="response"></p>
+            </div>
+            <br>
+            <div class="vm" data-vm="kali2">
+                <label>Kali Machine (for Senior to Manager):</label>
+                <br>
+                <select class="action">
+                    <option value="start">Start</option>
+                    <option value="stop">Stop</option>
+                    <option value="reset">Reset</option>
+                </select>
+                <button class="run-btn">Run</button>
+                <p class="response"></p>
+            </div>
+            <br>
+            <div class="vm" data-vm="win1">
+                <label>Windows Machine (for Senior to Manager):</label>
+                <br>
+                <select class="action">
+                    <option value="start">Start</option>
+                    <option value="stop">Stop</option>
+                    <option value="reset">Reset</option>
+                </select>
+                <button class="run-btn">Run</button>
+                <p class="response"></p>
+            </div>
+            <br>
+            <div class="vm" data-vm="basic">
+                <label>Wordpress Machine (for Associate):</label>
+                <br>
+                <select class="action">
+                    <option value="start">Start</option>
+                    <option value="stop">Stop</option>
+                    <option value="reset">Reset</option>
+                </select>
+                <button class="run-btn">Run</button>
+                <p class="response"></p>
+            </div>
+            <br>
+            <div class="vm" data-vm="msubuntu">
+                <label>Metasploit Ubuntu Machine (for Associate):</label>
+                <br>
+                <select class="action">
+                    <option value="start">Start</option>
+                    <option value="stop">Stop</option>
+                    <option value="reset">Reset</option>
+                </select>
+                <button class="run-btn">Run</button>
+                <p class="response"></p>
+            </div>
+            <br>
+            <div class="vm" data-vm="mswin">
+                <label>Metasploit Windows Machine (for Associate):</label>
+                <br>
+                <select class="action">
+                    <option value="start">Start</option>
+                    <option value="stop">Stop</option>
+                    <option value="reset">Reset</option>
+                </select>
+                <button class="run-btn">Run</button>
+                <p class="response"></p>
+            </div>
+            <br>
+            <div class="vm" data-vm="ia1">
+                <label>Insecure Acadamy Machine (for Senior to Manager):</label>
+                <br>
+                <select class="action">
+                    <option value="start">Start</option>
+                    <option value="stop">Stop</option>
+                    <option value="reset">Reset</option>
+                </select>
+                <button class="run-btn">Run</button>
+                <p class="response"></p>
+            </div>
+            <br>
+            <div class="vm" data-vm="ia2">
+                <label>Insecure Acadamy Backup Machine (backup):</label>
+                <br>
+                <select class="action">
+                    <option value="start">Start</option>
+                    <option value="stop">Stop</option>
+                    <option value="reset">Reset</option>
+                </select>
+                <button class="run-btn">Run</button>
+                <p class="response"></p>
+            </div>
+            <script>
+                /*function startVM() {
+                    var vmName = document.getElementById("vmName").value;
+                    var action = document.getElementById("start").value;
+                    //document.getElementById("response").innerHTML = vmName + " is " + action;
+                    
+                }
+
+                function stopVM() {
+                    var vmName = document.getElementById("vmName").value;
+                    var action = document.getElementById("stop").value;
+                    //document.getElementById("response").innerHTML = vmName + " is " + action;
+                    
+                }*/
+
+                /*function manageVM(vmName, action) {
+                    var responseMsg = `${vmName} is ${action.toLowerCase()}ing...`;
+                    var vmContainer = this.closest(".vm"); //find nearest vm container
+                    console.log(responseMsg);
+                    document.querySelector(`[data-vm="${vmName}"] .response`).innerHTML = responseMsg;
+                    
+                    fetch("/vm", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({vm_name: vmName, action: action })
+                    })
+                    .then(response => response.json()) //Parse JSON response
+                    .then(data => {
+                        vmContainer.querySelector(".response").innerHTML = data.message;
+                    })
+                    .catch(error => console.error("Error:", error));
+                }*/
+
+                document.querySelectorAll(".run-btn").forEach(button => {
+                    button.addEventListener("click", function() {
+                        var vmContainer = this.closest(".vm"); //find nearest vm container
+                        var vmName = vmContainer.getAttribute("data-vm"); //get vm name
+                        var action = vmContainer.querySelector(".action").value; //get action selected
+
+                        var responseMsg = `${vmName} is ${action.toLowerCase()}ing...`;
+                    var vmContainer = this.closest(".vm"); //find nearest vm container
+                    console.log(responseMsg);
+                    document.querySelector(`[data-vm="${vmName}"] .response`).innerHTML = responseMsg;
+                    
+                    fetch("/vm", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({vm_name: vmName, action: action })
+                    })
+                    .then(response => response.json()) //Parse JSON response
+                    .then(data => {
+                        vmContainer.querySelector(".response").innerHTML = data.message;
+                    })
+                    .catch(error => console.error("Error:", error));
+                    });
+                });
+            </script>
+        </main>
+    </div>
+</body>
+</html>
