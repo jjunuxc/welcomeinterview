@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Interview</title>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">-->
+    <link rel="stylesheet" href="..\static\style.css">
+</head>
+<body>
+    <header>
+        <h1>The Interview</h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/#task">The Task</a></li>
+                <li><a href="/#tools">Your Tools</a></li>
+                <li><a href="/#target">Machines To Target</a></li>
+                <li><a href="/#dosdonts">Do’s and Don’ts</a></li>
+                <li><a href="/#reset">Resetting Machines</a></li>
+            </ul>
+        </aside>
+    <main class="content">
+        <div class="login-container">
+            <centre>
+                <h2>Login</h2>
+                <form action="/adminreset" method="post">
+                    <label for="username" class="form-label">Username:</label>
+                    <br>
+                    <input type="text" name="username" id="username" class="form-control" required>
+                    <br>
+                    <label for="password" class="form-label">Password:</label>
+                    <br>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                    <br>
+                    {% if info %}
+                        <p class="error text-center">{{ info }}</p>
+                    {% endif %}
+                    <button type="submit">Login</button>
+                </form>
+            </centre>
+        </div>
+    </main>
