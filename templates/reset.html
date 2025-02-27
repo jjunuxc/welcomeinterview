@@ -21,12 +21,88 @@
                 <li><a href="/#reset">Resetting Machines</a></li>
             </ul>
         </aside>
-    <main class="content">
-        <div class="scrollable">
-            <h2>Resetting Machines</h2>
-            <br>
-            <p>
-                Mahcine 1: <button>Reset</button>
-            </p>
-        </div>
-    </main>
+        <main class="content">
+            <div class="scrollable">
+                <h2>Resetting Machines</h2>
+                <br>
+                <br>
+                <div class="vm" data-vm="10.129.23.6">
+                    <label>10.129.23.6 (for Associate):</label>
+                    <br>
+                    <select class="action">
+                        <option value="reset">Reset</option>
+                    </select>
+                    <button class="run-btn">Run</button>
+                    <p class="response"></p>
+                </div>
+                <br>
+                <div class="vm" data-vm="10.129.23.5">
+                    <label>10.129.23.5 (for Associate):</label>
+                    <br>
+                    <select class="action">
+                        <option value="reset">Reset</option>
+                    </select>
+                    <button class="run-btn">Run</button>
+                    <p class="response"></p>
+                </div>
+                <br>
+                <div class="vm" data-vm="10.129.23.7">
+                    <label>10.129.23.7 (for Associate):</label>
+                    <br>
+                    <select class="action">
+                        <option value="reset">Reset</option>
+                    </select>
+                    <button class="run-btn">Run</button>
+                    <p class="response"></p>
+                </div>
+                <br>
+                <div class="vm" data-vm="10.25.1.5">
+                    <label>10.25.1.5 (for Senior to Manager):</label>
+                    <br>
+                    <select class="action">
+                        <option value="reset">Reset</option>
+                    </select>
+                    <button class="run-btn">Run</button>
+                    <p class="response"></p>
+                </div>
+                <br>
+                <div class="vm" data-vm="10.25.1.7">
+                    <label>10.25.1.7 (backup):</label>
+                    <br>
+                    <select class="action">
+                        <option value="reset">Reset</option>
+                    </select>
+                    <button class="run-btn">Run</button>
+                    <p class="response"></p>
+                </div>
+            </div>
+
+            <script>
+                document.querySelectorAll(".run-btn").forEach(button => {
+                    button.addEventListener("click", function() {
+                        var vmContainer = this.closest(".vm"); //find nearest vm container
+                        var vmName = vmContainer.getAttribute("data-vm"); //get vm name
+                        var action = vmContainer.querySelector(".action").value; //get action selected
+
+                        var responseMsg = `${vmName} is ${action.toLowerCase()}ing...`;
+                    var vmContainer = this.closest(".vm"); //find nearest vm container
+                    console.log(responseMsg);
+                    document.querySelector(`[data-vm="${vmName}"] .response`).innerHTML = responseMsg;
+                    
+                    fetch("/vmreset", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({vm_name: vmName, action: action })
+                    })
+                    .then(response => response.json()) //Parse JSON response
+                    .then(data => {
+                        vmContainer.querySelector(".response").innerHTML = data.message;
+                    })
+                    .catch(error => console.error("Error:", error));
+                    });
+                });
+            </script>
+        </main>
+    </div>
+</body>
+</html>

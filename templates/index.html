@@ -30,10 +30,19 @@
                 <br>
                 <section id="task">
                     <h2>The task</h2>
+                    <br>
                     <p>
-                        There are 4 different machines to target. You are to find as many vulnerabilities as you can 
-                        in these 4 machines. <br>
+                        <b>For Associate Positions:</b>
+                        <br>
+                        There are 3 different machines to target. You are to find as many vulnerabilities as you can 
+                        in these 3 machines. Refer to <u>Machines To Target</u> for the IP addresses. <br>
                         Document these vulnerabilities in the reporting template given to you and email the report.
+                        <br>
+                        <br>
+                        <b>For Senior to Manager Positions:</b>
+                        <br>
+                        There is 1 machine to target and a source code review of the web app (using the windows machine). You are to find as many vulnerabilities as
+                        you can. Document these vulnerabilities in the reporting template given to you and email the report.
                     </p> 
                     <br>
                     <hr>
@@ -43,7 +52,7 @@
                     <h2>Your Tools</h2>
                     <p>
                         You have 2 Machines for use: <br><br>
-                        <h3>Windows Machine</h3>
+                        <h3>Windows Machine (Only for Senior to Manager positions)</h3>
                         <p>
                             For source code review. Open Visual Studio Code to review the source code of insecure acadamy.
                             <br>
@@ -68,12 +77,18 @@
                         You are only to target the following machines: 
                         <br>
                         <br>
-                        <ol>
+                        <b>For Associate:</b>
+                        <ul>
                             <li>Machine 1: 10.129.23.6</li>
-                            <li>Machine 2: 10.25.1.5 or 10.25.1.7 (only use when asked to)</li>
-                            <li>Machine 3: 10.129.23.5</li>
-                            <li>Machine 4: 10.129.23.7</li>
-                        </ol>
+                            <li>Machine 2: 10.129.23.5</li>
+                            <li>Machine 3: 10.129.23.7</li>
+                        </ul>
+                        <br>
+                        <b>For Senior to Manager:</b>
+                        <ul>
+                            <li>Machine 4: 10.25.1.5</li>
+                            <li>Backup: 10.25.1.7 (only use when asked to)</li>
+                        </ul>
                     </p>
                     <br>
                     <hr>
@@ -105,7 +120,7 @@
                     <p>
                         You may reset the target machines should you encounter any problems with the machines, or if you have 
                         flooded the database with too much data and would like to reset it. Please click <a href="{{ url_for('reset')}}">here</a> to reset the machines.
-                        Do note it will take at least 5 minutes for the machine to be reset. 
+                        Please only reset the <b>machines assigned to you.</b> 
                     </p>
                 </section>
             </div>
