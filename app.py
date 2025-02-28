@@ -557,3 +557,6 @@ def page_not_found(e):
 @app.errorhandler(405)
 def not_allowed(e):
     return render_template("405.html"), 405
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8080)
