@@ -35,7 +35,7 @@ ip_dict = {
     "10.25.1.7":"docker-two-vm",
     "10.129.23.5":"metasploit3-ubuntu1404-vm",
     "10.129.23.7":"metasploit3-win-vm",
-    "10.129.23.6":"basicpen-2-vuln-vm",
+    "10.129.23.6":"basicpen-2-vuln-vm"
 }
 
 def check_password(stored_hash, entered_pass):
