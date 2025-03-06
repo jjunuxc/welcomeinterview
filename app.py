@@ -116,7 +116,7 @@ def manage_vm():
             disk_param = Disk(
                 location = 'southeastasia',
                 tags = {
-                    'owner': 'Rong An (rong-an.su@cloudadsc.net)',
+                    'owner': 'Rong An (rong-an.su@cloudasc.net)',
                     'engagement_code': 'Cyber Admin (I-19553828)'
                 },
                 zones = [1],
@@ -170,7 +170,7 @@ def manage_vm():
                 disk_param = Disk(
                     location = 'southeastasia',
                     tags = {
-                        'owner': 'Rong An (rong-an.su@cloudadsc.net)',
+                        'owner': 'Rong An (rong-an.su@cloudasc.net)',
                         'engagement_code': 'Cyber Admin (I-19553828)'
                     },
                     sku = DiskSku(name = 'Premium_LRS'),
@@ -223,7 +223,7 @@ def manage_vm():
                 disk_param = Disk(
                     location = 'southeastasia',
                     tags = {
-                        'owner': 'Rong An (rong-an.su@cloudadsc.net)',
+                        'owner': 'Rong An (rong-an.su@cloudasc.net)',
                         'engagement_code': 'Cyber Admin (I-19553828)'
                     },
                     zones = [1],
@@ -276,7 +276,7 @@ def manage_vm():
                 disk_param = Disk(
                     location = 'southeastasia',
                     tags = {
-                        'owner': 'Rong An (rong-an.su@cloudadsc.net)',
+                        'owner': 'Rong An (rong-an.su@cloudasc.net)',
                         'engagement_code': 'Cyber Admin (I-19553828)'
                     },
                     zones = [2],
@@ -330,7 +330,7 @@ def manage_vm():
                 disk_param = Disk(
                     location = 'southeastasia',
                     tags = {
-                        'owner': 'Rong An (rong-an.su@cloudadsc.net)',
+                        'owner': 'Rong An (rong-an.su@cloudasc.net)',
                         'engagement_code': 'Cyber Admin (I-19553828)'
                     },
                     zones = [2],
@@ -399,7 +399,7 @@ def reset_vm():
                 disk_param = Disk(
                     location = 'southeastasia',
                     tags = {
-                        'owner': 'Rong An (rong-an.su@cloudadsc.net)',
+                        'owner': 'Rong An (rong-an.su@cloudasc.net)',
                         'engagement_code': 'Cyber Admin (I-19553828)'
                     },
                     sku = DiskSku(name = 'Premium_LRS'),
@@ -451,7 +451,7 @@ def reset_vm():
                 disk_param = Disk(
                     location = 'southeastasia',
                     tags = {
-                        'owner': 'Rong An (rong-an.su@cloudadsc.net)',
+                        'owner': 'Rong An (rong-an.su@cloudasc.net)',
                         'engagement_code': 'Cyber Admin (I-19553828)'
                     },
                     zones = [2],
@@ -505,7 +505,7 @@ def reset_vm():
                 disk_param = Disk(
                     location = 'southeastasia',
                     tags = {
-                        'owner': 'Rong An (rong-an.su@cloudadsc.net)',
+                        'owner': 'Rong An (rong-an.su@cloudasc.net)',
                         'engagement_code': 'Cyber Admin (I-19553828)'
                     },
                     zones = [2],
