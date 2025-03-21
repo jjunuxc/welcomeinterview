@@ -25,8 +25,13 @@
             <h2>Virtual Machines</h2>
             <br>
             <br>
-            <div class="vm" data-vm="kali1">
-                <label>Kali Machine (for Associate):</label>
+            {% for vm in vm_list %}
+            <div class="vm" data-vm="{{vm.identifier}}">
+                <label>
+                    VM Name: {{vm.name}}
+                    <br>
+                    IP Address: {{vm.ip_address}}
+                </label>
                 <br>
                 <select class="action">
                     <option value="start">Start</option>
@@ -37,89 +42,7 @@
                 <p class="response"></p>
             </div>
             <br>
-            <div class="vm" data-vm="kali2">
-                <label>Kali Machine (for Senior to Manager):</label>
-                <br>
-                <select class="action">
-                    <option value="start">Start</option>
-                    <option value="stop">Stop</option>
-                    <option value="reset">Reset</option>
-                </select>
-                <button class="run-btn">Run</button>
-                <p class="response"></p>
-            </div>
-            <br>
-            <div class="vm" data-vm="win1">
-                <label>Windows Machine (for Senior to Manager):</label>
-                <br>
-                <select class="action">
-                    <option value="start">Start</option>
-                    <option value="stop">Stop</option>
-                    <option value="reset">Reset</option>
-                </select>
-                <button class="run-btn">Run</button>
-                <p class="response"></p>
-            </div>
-            <br>
-            <div class="vm" data-vm="basic">
-                <label>Wordpress Machine (for Associate):</label>
-                <br>
-                <select class="action">
-                    <option value="start">Start</option>
-                    <option value="stop">Stop</option>
-                    <option value="reset">Reset</option>
-                </select>
-                <button class="run-btn">Run</button>
-                <p class="response"></p>
-            </div>
-            <br>
-            <div class="vm" data-vm="msubuntu">
-                <label>Metasploit Ubuntu Machine (for Associate):</label>
-                <br>
-                <select class="action">
-                    <option value="start">Start</option>
-                    <option value="stop">Stop</option>
-                    <option value="reset">Reset</option>
-                </select>
-                <button class="run-btn">Run</button>
-                <p class="response"></p>
-            </div>
-            <br>
-            <div class="vm" data-vm="mswin">
-                <label>Metasploit Windows Machine (for Associate):</label>
-                <br>
-                <select class="action">
-                    <option value="start">Start</option>
-                    <option value="stop">Stop</option>
-                    <option value="reset">Reset</option>
-                </select>
-                <button class="run-btn">Run</button>
-                <p class="response"></p>
-            </div>
-            <br>
-            <div class="vm" data-vm="ia1">
-                <label>Insecure Acadamy Machine (for Senior to Manager):</label>
-                <br>
-                <select class="action">
-                    <option value="start">Start</option>
-                    <option value="stop">Stop</option>
-                    <option value="reset">Reset</option>
-                </select>
-                <button class="run-btn">Run</button>
-                <p class="response"></p>
-            </div>
-            <br>
-            <div class="vm" data-vm="ia2">
-                <label>Insecure Acadamy Backup Machine (backup):</label>
-                <br>
-                <select class="action">
-                    <option value="start">Start</option>
-                    <option value="stop">Stop</option>
-                    <option value="reset">Reset</option>
-                </select>
-                <button class="run-btn">Run</button>
-                <p class="response"></p>
-            </div>
+            {% endfor %}
             <script>
                 /*function startVM() {
                     var vmName = document.getElementById("vmName").value;
@@ -164,7 +87,7 @@
                     console.log(responseMsg);
                     document.querySelector(`[data-vm="${vmName}"] .response`).innerHTML = responseMsg;
                     
-                    fetch("/vm", {
+                    fetch("/vm-op", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({vm_name: vmName, action: action })

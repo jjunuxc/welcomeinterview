@@ -26,8 +26,11 @@
                 <h2>Resetting Machines</h2>
                 <br>
                 <br>
-                <div class="vm" data-vm="10.129.23.6">
-                    <label>10.129.23.6 (for Associate):</label>
+                {% for vm in vm_list %}
+                <div class="vm" data-vm="{{vm.ip_address}}">
+                    <label>
+                        IP Address: {{vm.ip_address}}
+                    </label>
                     <br>
                     <select class="action">
                         <option value="reset">Reset</option>
@@ -36,45 +39,7 @@
                     <p class="response"></p>
                 </div>
                 <br>
-                <div class="vm" data-vm="10.129.23.5">
-                    <label>10.129.23.5 (for Associate):</label>
-                    <br>
-                    <select class="action">
-                        <option value="reset">Reset</option>
-                    </select>
-                    <button class="run-btn">Run</button>
-                    <p class="response"></p>
-                </div>
-                <br>
-                <div class="vm" data-vm="10.129.23.7">
-                    <label>10.129.23.7 (for Associate):</label>
-                    <br>
-                    <select class="action">
-                        <option value="reset">Reset</option>
-                    </select>
-                    <button class="run-btn">Run</button>
-                    <p class="response"></p>
-                </div>
-                <br>
-                <div class="vm" data-vm="10.25.1.5">
-                    <label>10.25.1.5 (for Senior to Manager):</label>
-                    <br>
-                    <select class="action">
-                        <option value="reset">Reset</option>
-                    </select>
-                    <button class="run-btn">Run</button>
-                    <p class="response"></p>
-                </div>
-                <br>
-                <div class="vm" data-vm="10.25.1.7">
-                    <label>10.25.1.7 (backup):</label>
-                    <br>
-                    <select class="action">
-                        <option value="reset">Reset</option>
-                    </select>
-                    <button class="run-btn">Run</button>
-                    <p class="response"></p>
-                </div>
+                {% endfor %}
             </div>
 
             <script>
