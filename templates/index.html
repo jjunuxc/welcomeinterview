@@ -34,9 +34,11 @@
                     <p>
                         <b>For Associate Positions:</b>
                         <br>
-                        There are 3 different machines to target. You are to find as many vulnerabilities as you can 
-                        in these 3 machines. Refer to <u>Machines To Target</u> for the IP addresses. <br>
-                        Document these vulnerabilities in the reporting template given to you and email the report.
+                        Refer to the email you received regarding the IP Address of the macine you are to target. You are to find 
+                        as many vulnerabilities as you can for the machine you are assigned to. You may target other machines available
+                        if you have completed assigned one. However, do ask before proceeding as there may be other candidates using it. 
+                        Refer to <u>Machines To Target</u> for the IP addresses. <br> Document these vulnerabilities in the reporting template 
+                        given to you and email the report.
                         <br>
                         <br>
                         <b>For Senior to Manager Positions:</b>
@@ -74,21 +76,17 @@
                 <section id="target">
                     <h2>Machines To Target</h2> 
                     <p>
-                        You are only to target the following machines: 
+                        You only need to target one of the machines assigned to you in your email.
+                        <br>
+                        You may target others once you have completed your machine and have received permission to try the others.
                         <br>
                         <br>
-                        <b>For Associate:</b>
+                        {% for vm in vm_list %}
                         <ul>
-                            <li>Machine 1: 10.129.23.6</li>
-                            <li>Machine 2: 10.129.23.5</li>
-                            <li>Machine 3: 10.129.23.7</li>
+                            <li>{{vm.ip_address}}</li>
                         </ul>
+                        {% endfor %}
                         <br>
-                        <b>For Senior to Manager:</b>
-                        <ul>
-                            <li>Machine 4: 10.25.1.5</li>
-                            <li>Backup: 10.25.1.7 (only use when asked to)</li>
-                        </ul>
                     </p>
                     <br>
                     <hr>

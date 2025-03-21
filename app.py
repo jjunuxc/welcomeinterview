@@ -69,7 +69,8 @@ class RemoveVmForm(FlaskForm):
 # Home page
 @app.route("/")
 def index():
-    return render_template("index.html")
+    vm_list = db.session.execute(db.select(Vm).where(Vm.vm_type == 'target').order_by(Vm.ip_address)).scalars()
+    return render_template("index.html", vm_list=vm_list)
 
 # VM Reset page
 @app.route("/reset")
