@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Interview</title>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">-->
+    <link rel="stylesheet" href="..\static\style.css">
+</head>
+<body>
+    <header>
+        <h1>The Interview</h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/#task">The Task</a></li>
+                <li><a href="/#tools">Your Tools</a></li>
+                <li><a href="/#target">Machines To Target</a></li>
+                <li><a href="/#dosdonts">Do’s and Don’ts</a></li>
+                <li><a href="/#reset">Resetting Machines</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <h2>Remove VMs</h2>
+            <br>
+            <form action="/removevm" method="post">
+                <label for="vm_name" class="form-label">Select VM to remove:</label>
+                <select name="vm_name" id="vm_name">
+                    {% for vm in vm_list %}
+                    <option value="{{ vm.name }}">{{ vm.name }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Delete</button>
+            </form>
+            <br>
+            <br>
+            <br>
+            {% for message in get_flashed_messages() %} 
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </main>
+    </div>
+</body>
+</html>
